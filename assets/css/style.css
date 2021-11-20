@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Merienda';font-size: 22px;
+    font-family: 'Amatic SC', cursive; font-size: 22px;
     background-color: rgb(0, 0, 0);
 }
 
@@ -36,3 +36,53 @@ header {
 .btnHeader:hover {
 
     background-color: rgb(27, 97, 0);}
+
+    .btn {
+        border-radius: 12px;
+        border: 0;
+        outline: 0; 
+        background-color: rgb(27, 97, 0);
+        color: rgb(0, 0, 0);
+        font-family: 'Amatic SC', cursive; font-size: 20px;
+    }
+    
+    
+    
+    #mainDiv {
+        margin-left: 25%;
+        margin-right: 25%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 50px;
+        font-family: 'Amatic SC', cursive; font-size: 22px;
+    }
+    
+    
+    
+    
+    #gridContainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr) 2fr 1fr;  
+        grid-template-rows: repeat(10, 1fr); 
+        gap: 10px 10px; 
+        font-family: 'Amatic SC', cursive; font-size: 22px;
+    }
+    
+    
+    #questionDisplay {
+        text-align: center;
+        align-self: baseline;
+        grid-column: 2 / span 2;
+        grid-row: 1 / span 5;
+        place-self: center;
+        font-size: 30px;
+    }
+    
+    #finalScoreDisplay {
+        
+        grid-column: 1 / span 2;
+        grid-row: 6 / span 1;
+        font-size: 15px;
+    }
