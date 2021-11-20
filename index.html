@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Code Quiz</title>
+</head>
+<body>
+    <header>
+        <div>
+            <button class="btnHeader" id="view-high-scores">See where you rank?</button>
+        </div>
+        <div>
+            <p>Tick Tock...<span id="timeleft">xxx</span></p>
+        </div>
+    </header>
+
+    <div id="mainDiv">
+        <div id="gridContainer">
+            <p id="questionDisplay">Riddle me this, riddle me that, can your answers save The Bat???</p>
+            <p id="finalScoreDisplay"></p>
+            <p id="enterInitials"></p>
+            <textarea id="enterInitialsTextArea"></textarea>
+            <button class="btn" id="start-quiz">???READY???</button>
+            <button class="btn" id="answer1"></button>
+            <button class="btn" id="answer2"></button>
+            <button class="btn" id="answer3"></button>
+            <button class="btn" id="answer4"></button>
+            <button class="btn" id="submitScore"></button>
+        </div>
+        <div id="answerCorrectWrongGrid"></div>
+        <p id="answerCorrectWrong"></p>
+    </div>
+
+    <script src="./assets/js/script.js"></script>  
+</body>
+</html>
