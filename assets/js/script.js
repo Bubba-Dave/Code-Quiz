@@ -325,4 +325,83 @@ startQuizBtnEl.addEventListener("click", function() {
 
             });
 
+            answer2BtnEl.addEventListener("click", function() {
+
+                if (questionDisplay.textContent === "Who killed Batman's parents?" && answer2BtnEl.textContent === "Joe Chill") {
+                    console.log("Correct");
+                    answerCorrectWrong.style.display=""; // Enables text content on correct and wrong answers
+                    answerCorrectWrong.textContent = "Correct!";
+                    answerCorrectWrong.style.borderTop = "solid #800080";
+                    answerCorrectWrongGrid.appendChild(answerCorrectWrong);
+                    questionNumber = 0; 
+                    answerNumber = 0; 
+                    console.log("I'm here" + timeInterval);
+                    answer1BtnEl.style.display = 'none';
+                    answer2BtnEl.style.display = 'none';
+                    answer3BtnEl.style.display = 'none';
+                    answer4BtnEl.style.display = 'none';
+                    answerCorrectWrong.style.display='none'; 
+                    startQuizBtnEl.style.display = 'none'; 
+                    //Finished quiz display
+                    questionDisplay.textContent = "You have finished the quiz!";
+                    finalScoreDisplay.style.display = ""; 
+                    enterInitials.style.display = ""; 
+                    enterInitialsTextArea.style.display=""; 
+                    finalScoreDisplay.textContent = "Your final score is: " + highScore; 
+                    enterInitials.textContent = "Enter initials: "
+                    submitScoreEl.style.display = "";
+                    submitScoreEl.textContent = "Submit";
+                    clearInterval(timeInterval);
+                } else {
+
+                    switch(answer2BtnEl.textContent) {
+                        case "1950":
+                            console.log("Inside the case now");
+                            answerCorrectWrong.style.display="";
+                            answerCorrectWrong.textContent = "Wrong!";
+                            answerCorrectWrong.style.borderTop = "solid #800080";
+                          
+                            score = 1; 
+                            questionNumber = 1; 
+                            answerNumber = 1;
+                            break;
+                        case "Posion Ivy":
+                            console.log("Inside the case now");
+                            answerCorrectWrong.style.display="";
+                            answerCorrectWrong.textContent = "Wrong!";
+                            answerCorrectWrong.style.borderTop = "solid #800080";
+                         
+                            score = 1; 
+                            questionNumber = 2; 
+                            answerNumber = 4;
+                            console.log(score);
+                            break;
+                        case "Preston Payne":
+                            console.log("Inside the case now");
+                            answerCorrectWrong.style.display="";
+                            answerCorrectWrong.textContent = "Wrong!";
+                            answerCorrectWrong.style.borderTop = "solid #800080";
+                            score = 1; 
+                            questionNumber = 3; 
+                            answerNumber = 2;
+                            break;
+                        case "Jerry Siegel":
+                            console.log("Inside the case now");
+                            answerCorrectWrong.style.display="";
+                            answerCorrectWrong.textContent = "Wrong!";
+                            answerCorrectWrong.style.borderTop = "solid #800080";
+                            score = 1; 
+                            questionNumber = 4; 
+                            answerNumber = 3;
+                            break;
+
+                            
+                    }
+                 }
+
+
+
+                
+            });
+
             
