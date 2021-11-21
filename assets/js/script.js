@@ -72,4 +72,145 @@ var answersObject = {
             3: "All of the above"},  //correct answer
     }
 };
+htmlTimeLeft.textContent = timeLeft;
+// View high scores
+viewHighScoresBtnEl.addEventListener("click", function() { 
 
+    var quizUsers = "";
+    var substringTest ="";
+    var highScores = "";
+
+    for (var i=0; i < localStorage.length; i++) {
+        var checkUserValue = [];
+        
+        quizUsers = localStorage.getItem(localStorage.key(i));
+        substringTest = quizUsers.substring(0,4) 
+        if (substringTest == "quiz") {
+            checkUserValue = quizUsers.split(",");
+            var userName = checkUserValue[0]
+            highScores += "User " + userName.substring(4) + " high score is: " + checkUserValue[1] + "\n";
+       }
+    }
+    window.alert(highScores);
+
+});
+// Submit high scores
+submitScoreEl.addEventListener("click", function() { 
+    
+
+    var quizLocalStorage = "quiz";
+    var quizUserDetails = "";
+    var value = [];
+    
+    // Create an array for validation
+    quizUserDetails = quizLocalStorage + enterInitialsTextArea.value 
+    value = [quizUserDetails,highScore] 
+
+
+
+    if (!localStorage.length) {
+        localStorage.setItem("test","test");
+    }
+       
+        
+    for (var i=0; i < localStorage.length; i++){
+        
+        var checkUser = "";
+        var checkUserValue = [];
+
+        
+        quizUserDetails = quizLocalStorage + enterInitialsTextArea.value;
+
+       
+        checkUser = localStorage.getItem(quizUserDetails);
+        
+   
+        if (checkUser == null) { 
+            localStorage.setItem(quizUserDetails, value); 
+            window.alert("Your score of " + highScore + " has been submitted!")
+            break;
+        } else if (checkUser != null){
+            checkUserValue = checkUser.split(","); 
+           
+        
+        }  
+
+
+
+              
+        if ( quizUserDetails == checkUserValue[0] && highScore == checkUserValue[1] ) {
+
+       
+        localStorage.setItem(quizUserDetails, value); 
+        window.alert(highScore + " " + "is the latest entry for user initial " + enterInitialsTextArea.value + ". Entry will not be added.")
+        break; 
+        } else if (enterInitialsTextArea.value == "") {
+            window.alert("Please enter an initial");
+            break;
+        } else if ( quizUserDetails == checkUserValue[0] && highScore > checkUserValue[1] ) { 
+            // New high score submitted!
+            localStorage.setItem(quizUserDetails, value); 
+            window.alert("New high score of " + highScore + " has been submitted!.\nYour previous score was " + checkUserValue[1])
+            break; 
+        } else if ( quizUserDetails == checkUserValue[0] && highScore < checkUserValue[1] ) { 
+            
+            localStorage.setItem(quizUserDetails, value);
+            window.alert("Your previous code of " + checkUserValue[1] + " was higher. Entry will not be added.");
+            break; 
+
+        } else { 
+            localStorage.setItem(quizUserDetails, value); 
+            window.alert("Your score of " + highScore + " has been submitted!")
+            break;
+        }
+                
+    }
+    
+} );
+
+
+answer1BtnEl.addEventListener("mouseover", function() {
+
+    answerCorrectWrong.style.display='none';
+
+});
+
+answer2BtnEl.addEventListener("mouseover", function() {
+
+    answerCorrectWrong.style.display='none';
+
+});
+
+answer3BtnEl.addEventListener("mouseover", function() {
+
+    answerCorrectWrong.style.display='none';
+
+});
+
+answer4BtnEl.addEventListener("mouseover", function() {
+
+    answerCorrectWrong.style.display='none';
+
+});
+
+submitScoreEl.addEventListener("mouseover", function() {
+
+    answerCorrectWrong.style.display='none';
+
+});
+
+startQuizBtnEl.addEventListener("click", function() {
+
+
+    startQuizBtnEl.style.display = 'none';
+    questionDisplay.style.display='none';
+    finalScoreDisplay.style.display = 'none';
+    enterInitials.style.display='none';
+    score = 0; 
+    timeLeft=60;
+    htmlTimeLeft.textContent = timeLeft; 
+    finalAnswerCheck = 0; 
+    checkTimes = 1; 
+
+
+    
