@@ -9,7 +9,7 @@ Here is the welcome screen when going to the quiz page
 https://bubba-dave.github.io/Riddler-Quiz/
 
 
-## How To
+## How run the quiz
 ### Click the READY button to start the quiz
 
 ![nav-menu](./assets/images/ready.png?raw=true "Start-quiz-button")
@@ -26,18 +26,26 @@ https://bubba-dave.github.io/Riddler-Quiz/
 
 ![nav-menu](./assets/images/wrong.PNG?raw=true "wrong")
 
-### The quiz ends ONE of two ways
+## The quiz ends ONE of two ways
 #### If the timer runs out you are directed to try again by clicking the ready button to start over
-#### If the quiz is completed you can enter your initials and click sumbit to save high score
+#### If the quiz is completed you can enter your initials and click submit to save your score
 
 ![nav-menu](./assets/images/timesup.PNG?raw=true "times-up")
 
 ![nav-menu](./assets/images/finished.PNG?raw=true "enter-initials")
 
-### New High Score Submitted!
+## New Score Submitted!
 
 ![nav-menu](./assets/images/submitted.PNG?raw=true "highscore-submitted")
 
 ### See where you rank on the leader board!
 
 ![nav-menu](./assets/images/scoreboard.PNG?raw=true "highscores")
+
+
+## Built By
+
+David Hart
+
+### With help by
+Boot camp study groups and office hours, W3schools, Stack Overflow, and YouTube
