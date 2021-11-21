@@ -476,4 +476,109 @@ startQuizBtnEl.addEventListener("click", function() {
 
             });
 
-            
+            answer4BtnEl.addEventListener("click", function() {
+
+                if (questionDisplay.textContent === "Which of the following characters is the supervillain Clayface?" && answer4BtnEl.textContent === "All of the above") {
+                    console.log("Correct");
+                    questionNumber = 3; 
+                    answerNumber = 2;
+                    answerCorrectWrong.style.display=""; // Enables text content on correct and wrong answers
+                    answerCorrectWrong.textContent = "Correct!"
+                    answerCorrectWrong.style.borderTop = "solid #800080";
+                    answerCorrectWrongGrid.appendChild(answerCorrectWrong);
+
+                } else {
+
+                    switch(answer4BtnEl.textContent) {
+                        case "1970":
+                            console.log("Inside the case now");
+                            answerCorrectWrong.style.display="";
+                            answerCorrectWrong.textContent = "Wrong!";
+                            answerCorrectWrong.style.borderTop = "solid #800080";
+                            score = 1; 
+                            questionNumber = 1; 
+                            answerNumber = 1;
+                            break;
+                        case "The Penguin":
+                            console.log("Inside the case now");
+                            answerCorrectWrong.style.display="";
+                            answerCorrectWrong.textContent = "Wrong!";
+                            answerCorrectWrong.style.borderTop = "solid #800080";
+                            score = 1; 
+                            questionNumber = 2; 
+                            answerNumber = 4;
+                            break;
+                        case "Jack Kirby":
+                            console.log("Inside the case now");
+                            answerCorrectWrong.style.display="";
+                            answerCorrectWrong.textContent = "Wrong!";
+                            answerCorrectWrong.style.borderTop = "solid #800080";
+                            score = 1; 
+                            questionNumber = 4; 
+                            answerNumber = 3;
+                        break;
+                        case "Frank Miller":
+                            console.log("Inside the case now");
+                            answerCorrectWrong.style.display="";
+                            answerCorrectWrong.textContent = "Wrong!";
+                            answerCorrectWrong.style.borderTop = "solid #800080";
+                            score = 1; 
+                            questionNumber = 0; 
+                            answerNumber = 0; 
+                            console.log("I'm here" + timeInterval);
+                            answer1BtnEl.style.display = 'none';
+                            answer2BtnEl.style.display = 'none';
+                            answer3BtnEl.style.display = 'none';
+                            answer4BtnEl.style.display = 'none';
+                            answerCorrectWrong.style.display='none'; 
+                            startQuizBtnEl.style.display = 'none'; 
+                            //Finished quiz display
+                            questionDisplay.textContent = "You have finished the quiz!";
+                            finalScoreDisplay.style.display = ""; 
+                            enterInitials.style.display = ""; 
+                            enterInitialsTextArea.style.display="";  
+                            finalAnswerCheck = 1; 
+                            lastQuestionWrong();
+                            finalScoreDisplay.textContent = "Your final score is: " + highScore; 
+                            enterInitials.textContent = "Enter initials: "
+                            submitScoreEl.style.display = "";
+                            submitScoreEl.textContent = "Submit";                   
+                            clearInterval(timeInterval);
+                        break;
+                        
+                    }
+                 
+                }
+                
+            });
+
+        }
+        else if(timeLeft === 0){
+
+          console.log("I'm here" + timeInterval);
+          questionNumber = 0; 
+          answerNumber = 0; 
+          answer1BtnEl.style.display = 'none';
+          answer2BtnEl.style.display = 'none';
+          answer3BtnEl.style.display = 'none';
+          answer4BtnEl.style.display = 'none';
+          answerCorrectWrong.style.display='none'; 
+          // Timed out display
+          questionDisplay.textContent = "Times up! Try again by clicking on \"READY\"";
+          startQuizBtnEl.style.display = "";
+          clearInterval(timeInterval);
+    
+          
+        }
+      }, 1000)
+
+});
+
+function lastQuestionWrong () {
+        if (finalAnswerCheck === 1 && checkTimes === 1) {
+        highScore -= 10;
+        checkTimes = 2;
+        return highScore
+    }
+
+  }
