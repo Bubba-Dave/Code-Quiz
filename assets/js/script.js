@@ -213,4 +213,116 @@ startQuizBtnEl.addEventListener("click", function() {
     checkTimes = 1; 
 
 
-    
+    var timeInterval = setInterval(function() {
+
+        if (score === 1){ // on wrong answer remove a point
+            highScore -= 10;
+        }
+
+        score = 0; 
+
+        
+        if(timeLeft >= 1 && finalAnswerCheck !== 1) {
+            questionDisplay.textContent = questionsObject.correct[questionNumber];
+            
+            questionDisplay.style.display= ""; 
+            answer1BtnEl.style.display = ""; 
+            answer2BtnEl.style.display = "";
+            answer3BtnEl.style.display = "";
+            answer4BtnEl.style.display = "";
+
+            //Display answers to the question
+            answer1BtnEl.textContent = answersObject.answers[answerNumber][0];
+            answer2BtnEl.textContent = answersObject.answers[answerNumber][1];
+            answer3BtnEl.textContent = answersObject.answers[answerNumber][2];
+            answer4BtnEl.textContent = answersObject.answers[answerNumber][3];
+           
+            gridContainer.appendChild(questionDisplayEl);
+            gridContainer.appendChild(answer1BtnEl);
+            gridContainer.appendChild(finalScoreDisplayEl);
+            timeLeft -= 1;
+            htmlTimeLeft.textContent = timeLeft;
+            console.log("time left:" + timeLeft)
+            
+
+            answer1BtnEl.addEventListener("click", function() {
+
+                if (questionDisplay.textContent === "What Batman villain formerly worked as a zoologist?" && answer1BtnEl.textContent === "Man Bat") {
+                    console.log("Correct");
+                    questionNumber = 2; 
+                    answerNumber = 4;
+                    answerCorrectWrong.style.display="";
+                    answerCorrectWrong.textContent = "Correct!";
+                    answerCorrectWrong.style.borderTop = "solid #800080";
+                    answerCorrectWrongGrid.appendChild(answerCorrectWrong);
+                } else {
+
+                    //Assign wrong values based incorrect answers.
+
+                    switch(answer1BtnEl.textContent) {
+                        case "1960":
+                            console.log("Inside the case now");
+                            answerCorrectWrong.style.display="";
+                            answerCorrectWrong.textContent = "Wrong!";
+                            answerCorrectWrong.style.borderTop = "solid #800080";
+                            
+                            score = 1; 
+                            questionNumber = 1; 
+                            answerNumber = 1;
+                            break;
+                        case "Matt Hagen":
+                            console.log("Inside the case now");
+                            answerCorrectWrong.style.display="";
+                            answerCorrectWrong.textContent = "Wrong!";
+                            answerCorrectWrong.style.borderTop = "solid #800080";
+                            
+                            score = 1; 
+                            questionNumber = 3; 
+                            answerNumber = 2;
+                            break;
+                        case "Joe Shuster":
+                            console.log("Inside the case now");
+                            answerCorrectWrong.style.display="";
+                            answerCorrectWrong.textContent = "Wrong!";
+                            answerCorrectWrong.style.borderTop = "solid #800080";
+                            
+                            score = 1; 
+                            questionNumber = 4; 
+                            answerNumber = 3;
+                        break;
+                        case "Sal Maroni":
+                            console.log("Correct");
+                            answerCorrectWrong.style.display=""; // Enables text content on correct and wrong answers
+                            answerCorrectWrong.textContent = "Correct!";
+                            answerCorrectWrong.style.borderTop = "solid #800080";
+                            answerCorrectWrongGrid.appendChild(answerCorrectWrong);
+                            questionNumber = 0; 
+                            answerNumber = 0; 
+                            console.log("I'm here" + timeInterval);
+                            answer1BtnEl.style.display = 'none';
+                            answer2BtnEl.style.display = 'none';
+                            answer3BtnEl.style.display = 'none';
+                            answer4BtnEl.style.display = 'none';
+                            answerCorrectWrong.style.display='none'; 
+                            startQuizBtnEl.style.display = 'none'; 
+                            //Finished quiz display
+                            questionDisplay.textContent = "You have finished the quiz!";
+                            finalScoreDisplay.style.display = ""; 
+                            enterInitials.style.display = ""; 
+                            enterInitialsTextArea.style.display="";  
+                            finalAnswerCheck = 1; 
+                            lastQuestionWrong();
+                            finalScoreDisplay.textContent = "Your final score is: " + highScore; 
+                            enterInitials.textContent = "Enter initials: "
+                            submitScoreEl.style.display = "";
+                            submitScoreEl.textContent = "Submit";
+                            clearInterval(timeInterval);
+                            break;
+                        
+                    }
+                }
+      
+
+            });
+
+            
