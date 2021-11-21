@@ -244,7 +244,7 @@ startQuizBtnEl.addEventListener("click", function() {
             htmlTimeLeft.textContent = timeLeft;
             console.log("time left:" + timeLeft)
             
-
+            // answer button 1 options
             answer1BtnEl.addEventListener("click", function() {
 
                 if (questionDisplay.textContent === "What Batman villain formerly worked as a zoologist?" && answer1BtnEl.textContent === "Man Bat") {
@@ -324,7 +324,7 @@ startQuizBtnEl.addEventListener("click", function() {
       
 
             });
-
+            // answer button 2 options
             answer2BtnEl.addEventListener("click", function() {
 
                 if (questionDisplay.textContent === "Who killed Batman's parents?" && answer2BtnEl.textContent === "Joe Chill") {
@@ -403,7 +403,7 @@ startQuizBtnEl.addEventListener("click", function() {
 
                 
             });
-
+            // answer button 3 options
             answer3BtnEl.addEventListener("click", function() {
 
                 if (questionDisplay.textContent === "What year was the character of Robin first introduced?" && answer3BtnEl.textContent === "1940") {
@@ -475,7 +475,7 @@ startQuizBtnEl.addEventListener("click", function() {
                 }
 
             });
-
+            // answer button 4 options
             answer4BtnEl.addEventListener("click", function() {
 
                 if (questionDisplay.textContent === "Which of the following characters is the supervillain Clayface?" && answer4BtnEl.textContent === "All of the above") {
